@@ -306,30 +306,55 @@
     2. Platform Transaction Manager - Extends transaction manager
        1. Used for transaction infrastructure
 37. What is a PersistenceContext?
-    1. 
+    1. Is a cache that sits between application and storage
+       1. It keeps track of any changes made into the managed entity.
+       2. When a transaction is made,it keeps track of anything changed and it anything changes during the transaction then the transaction is marked dirty.
 38. Explain how to integrate Spring and Hibernate using ContextualSession
+    1. The code
 39. What interfaces are available in Spring Data JPA?
+    1. JpaRepository 
+    2. JpaSpecificationExecutor
 40. What is the difference between JPARepository and CrudRepository?
+    1. CrudRepository provides CRUD functions
+    2. JpaRepo - provides more methods like deleting records in batch and flushing persistence record
 41. What is the naming conventions for methods in Spring Data repositories?
+    1. findBy
+    2. findTop3By
+    3. find
+    4. By
+    5. Top
+    6. Equal
+    7. Is
 42. How are Spring repositories implemented by Spring at runtime?
+    1. 
 43. What is @Query used for?
+    1. declare finder queries
 
 ### Spring Boot
 
 44. How is Spring Boot different from legacy Spring applications? What does it mean that it is “opinionated”?
-
+    1. Spring boot uses Servlet 3 features to bootstrap an application
+    2. opinionated - it takes a happy path that makes development easier for people using hteir framework
 45. What does “convention over configuration” mean?
-
+    1. Do not nit-pick exact configuration
+       1. If a project requires a database, you should be able to swap in/out any databases of your choosing. You shouldn't need exactly one database
 46. What annotation would you use for Spring Boot apps? What does it do behind the scenes?
-
+    1. @SpringBootApplication
+    2. Enables features of autoconfiguration, component scan, and be able to define extra configuration
 47. How does Boot’s autoconfiguration work?
-
+    1. Allows library developers to automatically configure beans in spring context based on different conditions of the application
 48. What is the advantage of having an embedded Tomcat server?
-
+    1. Consistency throughout all java web applications
 49. What is the significance of the Spring Boot starter POM?
-
+    1. provides convientient depencies that you will use for web applications
 50. What is the Spring Boot actuator? What information can it give you?
-
+    1. It helps us monitor and and manage Spring Boot Framework
+    2. It can give us information on endpoints
+       1. Health
+       2. loggers
+    3. Metrics on our current project
+    4. We can shutdown our website with the actuator
 51. What files would you use to configure Spring Boot applications?
-
+    1. application.properties
 52. What is the benefit of using Spring Boot profiles?
+    1. Spring Profiles **helps to easily set right configurations on right environments**
